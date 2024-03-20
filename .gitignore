@@ -1,6 +1,6 @@
 # /bootstrap/compiled.php
 .env.*.php
-.env.php
+.env
 # /app/Exceptions
 /node_modules
 # /public/hot

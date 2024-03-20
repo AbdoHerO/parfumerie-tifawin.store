@@ -558,7 +558,7 @@
             let msg = document.getElementById('whats-in').value;
             let relmsg = msg.replace(/ /g, "%20");
             //just change the numbers "1515551234567" for your number. Don't use +001-(555)1234567
-            window.open('https://wa.me/212645743970?text=' + relmsg, '_blank');
+            window.open('https://wa.me/212626775308?text=' + relmsg, '_blank');
         }
 
     // setTimeout(() => {
@@ -576,13 +576,13 @@
 
 
     $("#orderByWtp_link").click(function () {
-                //   var phone = 212645743970";
+                //   var phone = 212626775308";
                 //     var data = "Id product: " ;
                 var id_product_wtp = $('#id_product_wtp').val();
                 var name_product_wtp = $('#name_product_wtp').val();
                 var price_product_wtp = $('#price_product_wtp').val();
 
-                var url = "https://wa.me/212645743970?text=link of product : " + window.location.href + "%0A%0AID Product: " + id_product_wtp + "%0AName of Product:  " + name_product_wtp + "%0APrice of Product:  " + price_product_wtp + "";
+                var url = "https://wa.me/212626775308?text=link of product : " + window.location.href + "%0A%0AID Product: " + id_product_wtp + "%0AName of Product:  " + name_product_wtp + "%0APrice of Product:  " + price_product_wtp + "";
                 window.open(url, '_blank');
             });
 

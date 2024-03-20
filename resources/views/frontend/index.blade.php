@@ -135,7 +135,7 @@
     @endif
 
     <!-- Today's deal -->
-    @if($num_todays_deal > 0 && false)
+    @if($num_todays_deal > 0)
     <section class="mb-2 mb-md-3 mt-2 mt-md-3">
         <div class="container">
             <!-- Banner -->

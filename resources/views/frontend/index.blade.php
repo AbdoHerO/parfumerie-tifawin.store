@@ -198,29 +198,7 @@
     @endif
 
 
-    <!-- Banner section 1 -->
-    @if (get_setting('home_banner1_images') != null)
-    <div class="mb-2 mb-md-3 mt-2 mt-md-3">
-        <div class="container">
-            @php 
-                $banner_1_imags = json_decode(get_setting('home_banner1_images')); 
-                $data_md = count($banner_1_imags) >= 2 ? 2 : 1;
-            @endphp
-            <div class="w-100">
-                <div class="aiz-carousel gutters-16 overflow-hidden arrow-inactive-none arrow-dark arrow-x-15" data-items="{{ count($banner_1_imags) }}" data-xxl-items="{{ count($banner_1_imags) }}" data-xl-items="{{ count($banner_1_imags) }}" data-lg-items="{{ $data_md }}" data-md-items="{{ $data_md }}" data-sm-items="1" data-xs-items="1" data-arrows="true" data-dots="false">
-                    @foreach ($banner_1_imags as $key => $value)
-                        <div class="carousel-box overflow-hidden hov-scale-img">
-                            <a href="{{ json_decode(get_setting('home_banner1_links'), true)[$key] }}" class="d-block text-reset overflow-hidden">
-                                <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($value) }}" 
-                                alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload w-100 has-transition" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-    @endif  
+    
 
     <!-- Featured Categories -->
     @if (count($featured_categories) > 0 && false)
@@ -382,6 +360,30 @@
         @endif
     </div>
 
+    <!-- Banner section 1 -->
+    @if (get_setting('home_banner1_images') != null)
+    <div class="mb-2 mb-md-3 mt-2 mt-md-3">
+        <div class="container">
+            @php 
+                $banner_1_imags = json_decode(get_setting('home_banner1_images')); 
+                $data_md = count($banner_1_imags) >= 2 ? 2 : 1;
+            @endphp
+            <div class="w-100">
+                <div class="aiz-carousel gutters-16 overflow-hidden arrow-inactive-none arrow-dark arrow-x-15" data-items="{{ count($banner_1_imags) }}" data-xxl-items="{{ count($banner_1_imags) }}" data-xl-items="{{ count($banner_1_imags) }}" data-lg-items="{{ $data_md }}" data-md-items="{{ $data_md }}" data-sm-items="1" data-xs-items="1" data-arrows="true" data-dots="false">
+                    @foreach ($banner_1_imags as $key => $value)
+                        <div class="carousel-box overflow-hidden hov-scale-img">
+                            <a href="{{ json_decode(get_setting('home_banner1_links'), true)[$key] }}" class="d-block text-reset overflow-hidden">
+                                <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($value) }}" 
+                                alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload w-100 has-transition" onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';">
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif  
+
     <!-- Banner Section 2 -->
     @if (get_setting('home_banner2_images') != null && false)
     <div class="mb-2 mb-md-3 mt-2 mt-md-3">
@@ -521,7 +523,7 @@
             return \App\Models\Shop::where('verification_status', 1)->orderBy('num_of_sale', 'desc')->take(5)->get();
         });   
     @endphp
-    @if (get_setting('vendor_system_activation') == 1)
+    @if (get_setting('vendor_system_activation') == 1 && false)
         <section class="mb-2 mb-md-3 mt-2 mt-md-3">
             <div class="container">
                 <!-- Top Section -->
